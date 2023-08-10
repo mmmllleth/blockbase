@@ -26,6 +26,21 @@ class WalletBaseBindings {
           lookup)
       : _lookup = lookup;
 
+  ffi.Pointer<ffi.Char> KeyfromSeed(
+    ffi.Pointer<ffi.Char> seed,
+  ) {
+    return _KeyfromSeed(
+      seed,
+    );
+  }
+
+  late final _KeyfromSeedPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<ffi.Char>)>>('KeyfromSeed');
+  late final _KeyfromSeed = _KeyfromSeedPtr.asFunction<
+      ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
+
   void ChangeWallet(
     ffi.Pointer<ffi.Char> _secret,
     ffi.Pointer<ffi.Char> _chain,
@@ -324,21 +339,18 @@ class WalletBaseBindings {
 
   ffi.Pointer<ffi.Char> TON_getAccount(
     ffi.Pointer<ffi.Char> mnemonic,
-    ffi.Pointer<ffi.Char> mode,
   ) {
     return _TON_getAccount(
       mnemonic,
-      mode,
     );
   }
 
   late final _TON_getAccountPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('TON_getAccount');
+              ffi.Pointer<ffi.Char>)>>('TON_getAccount');
   late final _TON_getAccount = _TON_getAccountPtr.asFunction<
-      ffi.Pointer<ffi.Char> Function(
-          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
+      ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
   void TON_transfer(
     ffi.Pointer<ffi.Char> privateKey,

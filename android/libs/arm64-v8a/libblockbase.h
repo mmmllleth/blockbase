@@ -74,6 +74,7 @@ typedef struct { void *data; GoInt len; GoInt cap; } GoSlice;
 extern "C" {
 #endif
 
+extern char* KeyfromSeed(char* seed);
 extern void ChangeWallet(char* _secret, char* _chain, char* _rpcUrl);
 extern char* TRON_signTron(char* txId, char* privateKey);
 extern char* TRON_getAccount(char* privateKey);
@@ -91,7 +92,7 @@ extern void ETH_call(char* privateKey, char* to, char* amount);
 extern void ETH_query(char* privateKey, char* to, char* amount);
 extern void TON_signTON();
 extern char* TON_createWallet();
-extern char* TON_getAccount(char* mnemonic, char* mode);
+extern char* TON_getAccount(char* mnemonic);
 extern void TON_transfer(char* privateKey, char* to, char* amount);
 extern void TON_transfer20(char* privateKey, char* to, char* contract);
 extern void TON_transfer21(char* privateKey, char* to, char* contract, char* id);

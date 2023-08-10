@@ -25,7 +25,6 @@ class Ton implements ChainBase {
     final m = mode ?? "";
     final res = bindings.TON_getAccount(
       secret.toNativeUtf8().cast(),
-      m.toNativeUtf8().cast(),
     );
 
     final address = res.cast<Utf8>().toDartString();
