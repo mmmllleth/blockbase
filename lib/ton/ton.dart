@@ -21,14 +21,12 @@ class Ton implements ChainBase {
 
   @override
   recoverAccount(String secret, {String? mode}) {
-    final m = mode ?? "";
     final res = bindings.TON_getAccount(
       secret.toNativeUtf8().cast(),
     );
 
     final address = res.cast<Utf8>().toDartString();
 
-    print('address: $address');
     return address;
   }
 

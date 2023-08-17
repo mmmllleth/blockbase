@@ -2,7 +2,7 @@ extern char* KeyfromSeed(char* seed);
 extern void ChangeV42();
 extern void ChangeV32();
 extern void ChangeV31();
-extern void ChangeTonWallet(char* _secret, char* _chain, char* _rpcUrl);
+extern void ChangeTonWallet(char* _secret);
 extern char* TRON_signTron(char* txId, char* privateKey);
 extern char* TRON_getAccount(char* privateKey);
 extern void TRON_transfer(char* privateKey, char* to, char* amount);

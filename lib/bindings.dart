@@ -67,23 +67,17 @@ class WalletBaseBindings {
 
   void ChangeTonWallet(
     ffi.Pointer<ffi.Char> _secret,
-    ffi.Pointer<ffi.Char> _chain,
-    ffi.Pointer<ffi.Char> _rpcUrl,
   ) {
     return _ChangeTonWallet(
       _secret,
-      _chain,
-      _rpcUrl,
     );
   }
 
-  late final _ChangeTonWalletPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>)>>('ChangeTonWallet');
-  late final _ChangeTonWallet = _ChangeTonWalletPtr.asFunction<
-      void Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-          ffi.Pointer<ffi.Char>)>();
+  late final _ChangeTonWalletPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Char>)>>(
+          'ChangeTonWallet');
+  late final _ChangeTonWallet =
+      _ChangeTonWalletPtr.asFunction<void Function(ffi.Pointer<ffi.Char>)>();
 
   ffi.Pointer<ffi.Char> TRON_signTron(
     ffi.Pointer<ffi.Char> txId,
