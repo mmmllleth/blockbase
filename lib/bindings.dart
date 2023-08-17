@@ -41,23 +41,47 @@ class WalletBaseBindings {
   late final _KeyfromSeed = _KeyfromSeedPtr.asFunction<
       ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
-  void ChangeWallet(
+  void ChangeV42() {
+    return _ChangeV42();
+  }
+
+  late final _ChangeV42Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('ChangeV42');
+  late final _ChangeV42 = _ChangeV42Ptr.asFunction<void Function()>();
+
+  void ChangeV32() {
+    return _ChangeV32();
+  }
+
+  late final _ChangeV32Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('ChangeV32');
+  late final _ChangeV32 = _ChangeV32Ptr.asFunction<void Function()>();
+
+  void ChangeV31() {
+    return _ChangeV31();
+  }
+
+  late final _ChangeV31Ptr =
+      _lookup<ffi.NativeFunction<ffi.Void Function()>>('ChangeV31');
+  late final _ChangeV31 = _ChangeV31Ptr.asFunction<void Function()>();
+
+  void ChangeTonWallet(
     ffi.Pointer<ffi.Char> _secret,
     ffi.Pointer<ffi.Char> _chain,
     ffi.Pointer<ffi.Char> _rpcUrl,
   ) {
-    return _ChangeWallet(
+    return _ChangeTonWallet(
       _secret,
       _chain,
       _rpcUrl,
     );
   }
 
-  late final _ChangeWalletPtr = _lookup<
+  late final _ChangeTonWalletPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>)>>('ChangeWallet');
-  late final _ChangeWallet = _ChangeWalletPtr.asFunction<
+              ffi.Pointer<ffi.Char>)>>('ChangeTonWallet');
+  late final _ChangeTonWallet = _ChangeTonWalletPtr.asFunction<
       void Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
           ffi.Pointer<ffi.Char>)>();
 
@@ -373,23 +397,35 @@ class WalletBaseBindings {
           ffi.Pointer<ffi.Char>)>();
 
   void TON_transfer20(
-    ffi.Pointer<ffi.Char> privateKey,
+    ffi.Pointer<ffi.Char> token,
     ffi.Pointer<ffi.Char> to,
-    ffi.Pointer<ffi.Char> contract,
+    ffi.Pointer<ffi.Char> amount,
+    ffi.Pointer<ffi.Char> decimals,
+    ffi.Pointer<ffi.Char> comment,
   ) {
     return _TON_transfer20(
-      privateKey,
+      token,
       to,
-      contract,
+      amount,
+      decimals,
+      comment,
     );
   }
 
   late final _TON_transfer20Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+          ffi.Void Function(
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>)>>('TON_transfer20');
   late final _TON_transfer20 = _TON_transfer20Ptr.asFunction<
-      void Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+      void Function(
+          ffi.Pointer<ffi.Char>,
+          ffi.Pointer<ffi.Char>,
+          ffi.Pointer<ffi.Char>,
+          ffi.Pointer<ffi.Char>,
           ffi.Pointer<ffi.Char>)>();
 
   void TON_transfer21(
