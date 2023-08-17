@@ -1,7 +1,6 @@
 import 'package:blockbase/blockbase.dart';
 import "package:ffi/ffi.dart";
 import '../common/common.dart';
-import '../blockbase.dart';
 
 class Ton implements ChainBase {
   Account? account;
