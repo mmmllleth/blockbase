@@ -9,7 +9,7 @@ void main() {
   bindings.InitTonApi("1".toNativeUtf8().cast());
 
   final address = Ton().recoverAccount(
-    "total item subject lava ginger hip prosper phrase danger throw valid sausage cherry maze wine gym merry senior sound spot naive consider rotate direct",
+    "debris episode alert steel useful choose another inhale flush under wedding live post social borrow valve stuff scare gather toast audit empty mountain choose",
   );
 
   print("address $address");
