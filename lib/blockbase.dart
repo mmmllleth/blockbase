@@ -8,13 +8,16 @@
 import 'dart:ffi';
 import 'dart:io';
 import "./bindings.dart";
+import 'package:path/path.dart' as path;
 
 const String _libName = 'blockbase';
 
 /// The dynamic library in which the symbols for [BlockbaseBindings] can be found.
 final DynamicLibrary _dylib = () {
   if (Platform.isMacOS || Platform.isIOS) {
-    return DynamicLibrary.open('$_libName.framework/$_libName');
+    return DynamicLibrary.open(
+      path.join(Directory.current.path, "go", "target", "lib.a"),
+    );
   }
   if (Platform.isAndroid || Platform.isLinux) {
     return DynamicLibrary.open('lib$_libName.so');

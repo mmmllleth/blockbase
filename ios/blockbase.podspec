@@ -28,7 +28,7 @@ A new Flutter FFI plugin project.
 
   # Flutter.framework does not contain a i386 slice.
   s.xcconfig = { 
-    'OTHER_LDFLAGS' => '-lWalletSDK' 
+    'OTHER_LDFLAGS' => '-lblockbase' 
   }
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.swift_version = '5.0'

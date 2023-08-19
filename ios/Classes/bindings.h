@@ -1,4 +1,5 @@
 extern char* KeyfromSeed(char* seed);
+extern void InitTonApi(char* dev);
 extern void ChangeV42();
 extern void ChangeV32();
 extern void ChangeV31();

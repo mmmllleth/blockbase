@@ -41,6 +41,20 @@ class WalletBaseBindings {
   late final _KeyfromSeed = _KeyfromSeedPtr.asFunction<
       ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
+  void InitTonApi(
+    ffi.Pointer<ffi.Char> dev,
+  ) {
+    return _InitTonApi(
+      dev,
+    );
+  }
+
+  late final _InitTonApiPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Char>)>>(
+          'InitTonApi');
+  late final _InitTonApi =
+      _InitTonApiPtr.asFunction<void Function(ffi.Pointer<ffi.Char>)>();
+
   void ChangeV42() {
     return _ChangeV42();
   }
