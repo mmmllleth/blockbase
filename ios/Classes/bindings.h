@@ -23,7 +23,7 @@ extern char* TON_createWallet();
 extern char* TON_getAccount(char* mnemonic);
 extern void TON_transfer(char* privateKey, char* to, char* amount);
 extern void TON_transfer20(char* token, char* to, char* amount, char* decimals, char* comment);
-extern void TON_transfer21(char* privateKey, char* to, char* contract, char* id);
+extern void TON_transfer21(char* token, char* index, char* to, char* comment);
 extern void TON_call(char* privateKey, char* to, char* amount);
 extern void TON_query(char* privateKey, char* to, char* amount);
 extern void sdkVersion();

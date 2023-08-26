@@ -49,7 +49,12 @@ class Ton implements ChainBase {
 
   @override
   getNFTs() {
-    throw UnimplementedError();
+    // https://tonapi.io/v1/nft/searchItems?owner=EQCHrl23ZVxzBrx7KpONsc_jIpA4ulA4dB195xLXlrS1dkC7&include_on_sale=true&limit=1000&offset=0
+    final params = {
+      "owner": "EQCHrl23ZVxzBrx7KpONsc_jIpA4ulA4dB195xLXlrS1dkC7",
+      "limit": 1000,
+      "offset": 0,
+    };
   }
 
   @override
