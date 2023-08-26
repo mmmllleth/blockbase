@@ -437,16 +437,16 @@ class WalletBaseBindings {
           ffi.Pointer<ffi.Char>)>();
 
   void TON_transfer21(
-    ffi.Pointer<ffi.Char> privateKey,
+    ffi.Pointer<ffi.Char> token,
+    ffi.Pointer<ffi.Char> index,
     ffi.Pointer<ffi.Char> to,
-    ffi.Pointer<ffi.Char> contract,
-    ffi.Pointer<ffi.Char> id,
+    ffi.Pointer<ffi.Char> comment,
   ) {
     return _TON_transfer21(
-      privateKey,
+      token,
+      index,
       to,
-      contract,
-      id,
+      comment,
     );
   }
 
