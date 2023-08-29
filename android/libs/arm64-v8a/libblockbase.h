@@ -83,6 +83,7 @@ extern "C" {
 
 extern char* KeyfromSeed(char* seed);
 extern void InitTonApi(char* dev);
+extern int GetEnv();
 extern void ChangeV42();
 extern void ChangeV32();
 extern void ChangeV31();

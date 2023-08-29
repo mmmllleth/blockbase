@@ -55,6 +55,14 @@ class WalletBaseBindings {
   late final _InitTonApi =
       _InitTonApiPtr.asFunction<void Function(ffi.Pointer<ffi.Char>)>();
 
+  int GetEnv() {
+    return _GetEnv();
+  }
+
+  late final _GetEnvPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function()>>('GetEnv');
+  late final _GetEnv = _GetEnvPtr.asFunction<int Function()>();
+
   void ChangeV42() {
     return _ChangeV42();
   }
