@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'blockbase'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A new Flutter FFI plugin project.'
   s.description      = <<-DESC
 A new Flutter FFI plugin project.
@@ -21,7 +21,6 @@ A new Flutter FFI plugin project.
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
   s.platform = :ios, '11.0'
-  # s.ios.vendored_frameworks = 'Frameworks/*'
   s.vendored_libraries = "Frameworks/*.a"
   s.preserve_paths = "Frameworks/*"
   s.requires_arc = true

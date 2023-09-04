@@ -17,7 +17,7 @@ final DynamicLibrary _dylib = () {
   if (Platform.isIOS) {
     return DynamicLibrary.open('$_libName.framework/$_libName');
   }
-  if (Platform.isMacOS || Platform.isIOS) {
+  if (Platform.isMacOS) {
     return DynamicLibrary.open(
       path.join(Directory.current.path, "go", "target", "lib.a"),
     );
